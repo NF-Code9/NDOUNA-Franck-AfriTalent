@@ -10,6 +10,10 @@
 
     <!-- Votre feuille de style personnelle -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -19,7 +23,10 @@
                     <img src="images/logo-afritalent.svg" alt="Logo AfriTalent" width="42" height="42">
                     <span>AfriTalent</span>
                 </a>
-                <div class="collapse navbar-collapse">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Accueil</a></li>
                         <li class="nav-item"><a class="nav-link" href="freelances.html">Freelances</a></li>
@@ -27,51 +34,59 @@
                         <li class="nav-item"><a class="nav-link" href="about.html">À propos</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     </ul>
-                    <div class="d-flex align-items-center gap-2">
-                        <a class="btn btn-brand" href="contact.html">Rejoindre AfriTalent</a>
-                    </div>
                 </div>
             </div>
         </nav>
     </header>
 
     <main id="main-content">
-    <section><div><div><div><span>Plans et tarification</span><h1>Choisissez le niveau d'accompagnement adapté à votre rythme de croissance.</h1></div></div></section>
-    <section>
-      <div>
-        <div>
-          <div>
+    <section class="page-hero">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-badge">Plans et tarification</span>
+          <h1>Choisissez le niveau d'accompagnement adapté à votre rythme de croissance.</h1>
+        </div>
+      </div>
+    </section>
+    <section class="section-space">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-6">
             <div>
-              <div>
-                <p>Investissement intelligent</p>
-                <h3>Choisissez votre plan</h3>
-                <p>Des offres adaptées à chaque étape de votre croissance freelance ou entreprise.</p>
-              </div>
+              <p>Investissement intelligent</p>
+              <h3>Choisissez votre plan</h3>
+              <p>Des offres adaptées à chaque étape de votre croissance freelance ou entreprise.</p>
             </div>
           </div>
-          <div>
+          <div class="col-md-6">
             <div>
               <h2>Des tarifs transparents pour des collaborations durables</h2>
               <p>Que vous soyez freelance ou entreprise, nos plans sont conçus pour maximiser votre retour sur investissement sans frais cachés.</p>
             </div>
           </div>
         </div>
-        <div>
-          <div><article><h2>Gratuit</h2><p>0€ <span>/ mois</span></p><ul><li><i class="bi bi-check-circle-fill"></i> Profil public de base</li><li><i class="bi bi-check-circle-fill"></i> 5 candidatures par mois</li><li><i class="bi bi-check-circle-fill"></i> Accès à la messagerie</li><li><i class="bi bi-x-circle-fill"></i> Mise en avant prioritaire</li><li><i class="bi bi-x-circle-fill"></i> Support dédié</li></ul><a href="contact.html">Commencer</a></article></div>
-          <div><article><span>Populaire</span><h2>Pro</h2><p>29€ <span>/ mois</span></p><ul><li><i class="bi bi-check-circle-fill"></i> Candidatures illimitées</li><li><i class="bi bi-check-circle-fill"></i> Badge profil vérifié</li><li><i class="bi bi-check-circle-fill"></i> Statistiques avancées</li><li><i class="bi bi-check-circle-fill"></i> Mise en avant dans les recherches</li><li><i class="bi bi-x-circle-fill"></i> Gestionnaire de compte dédié</li></ul><a href="contact.html">Passer au plan Pro</a></article></div>
-          <div><article><h2>Entreprise</h2><p>89€ <span>/ mois</span></p><ul><li><i class="bi bi-check-circle-fill"></i> Matching prioritaire</li><li><i class="bi bi-check-circle-fill"></i> Multi-comptes recruteurs</li><li><i class="bi bi-check-circle-fill"></i> Dashboard de suivi</li><li><i class="bi bi-check-circle-fill"></i> Support stratégique</li><li><i class="bi bi-check-circle-fill"></i> Gestionnaire de compte dédié</li></ul><a href="contact.html">Contacter l'équipe</a></article></div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <article class="pricing-card"><h2>Gratuit</h2><p class="price">0€ <span>/ mois</span></p><ul class="pricing-list"><li><i class="bi bi-check-circle-fill"></i> Profil public de base</li><li><i class="bi bi-check-circle-fill"></i> 5 candidatures par mois</li><li><i class="bi bi-check-circle-fill"></i> Accès à la messagerie</li><li class="muted"><i class="bi bi-x-circle-fill"></i> Mise en avant prioritaire</li><li class="muted"><i class="bi bi-x-circle-fill"></i> Support dédié</li></ul><a class="btn btn-outline-brand w-100" href="contact.html">Commencer</a></article>
+          </div>
+          <div class="col-md-4">
+            <article class="pricing-card featured"><span class="popular-badge">Populaire</span><h2>Pro</h2><p class="price">29€ <span>/ mois</span></p><ul class="pricing-list"><li><i class="bi bi-check-circle-fill"></i> Candidatures illimitées</li><li><i class="bi bi-check-circle-fill"></i> Badge profil vérifié</li><li><i class="bi bi-check-circle-fill"></i> Statistiques avancées</li><li><i class="bi bi-check-circle-fill"></i> Mise en avant dans les recherches</li><li class="muted"><i class="bi bi-x-circle-fill"></i> Gestionnaire de compte dédié</li></ul><a class="btn btn-brand w-100" href="contact.html">Passer au plan Pro</a></article>
+          </div>
+          <div class="col-md-4">
+            <article class="pricing-card"><h2>Entreprise</h2><p class="price">89€ <span>/ mois</span></p><ul class="pricing-list"><li><i class="bi bi-check-circle-fill"></i> Matching prioritaire</li><li><i class="bi bi-check-circle-fill"></i> Multi-comptes recruteurs</li><li><i class="bi bi-check-circle-fill"></i> Dashboard de suivi</li><li><i class="bi bi-check-circle-fill"></i> Support stratégique</li><li><i class="bi bi-check-circle-fill"></i> Gestionnaire de compte dédié</li></ul><a class="btn btn-outline-brand w-100" href="contact.html">Contacter l'équipe</a></article>
+          </div>
         </div>
       </div>
     </section>
-    <section id="faq">
-      <div>
-        <div><span>FAQ</span><h2>Questions fréquentes sur la plateforme</h2></div>
-        <div id="faqAccordion">
-          <div><h3><button type="button" data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="true" aria-controls="faqOne">Comment AfriTalent sélectionne les freelances ?</button></h3><div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"><div>Chaque profil passe par une vérification du portfolio, des références et de la spécialisation déclarée.</div></div></div>
-          <div><h3><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">Les entreprises peuvent-elles publier plusieurs missions ?</button></h3><div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div>Oui, les plans payants permettent de gérer plusieurs briefs en parallèle avec des accès équipe.</div></div></div>
-          <div><h3><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree">Y a-t-il des frais de mise en relation ?</button></h3><div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div>Le plan choisi couvre l'accès à la plateforme. Les tarifs de mission sont ensuite négociés directement entre les parties.</div></div></div>
-          <div><h3><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour" aria-expanded="false" aria-controls="faqFour">Puis-je changer d'offre à tout moment ?</button></h3><div id="faqFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div>Oui, la montée ou la descente de plan est possible à tout moment depuis votre espace.</div></div></div>
-          <div><h3><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFive" aria-expanded="false" aria-controls="faqFive">AfriTalent convient-elle aux équipes internationales ?</button></h3><div id="faqFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div>Oui, la plateforme met en avant les langues parlées, la disponibilité horaire et l'expérience en travail distribué.</div></div></div>
+    <section id="faq" class="section-space">
+      <div class="container">
+        <div class="section-heading mb-5"><span class="section-badge">FAQ</span><h2>Questions fréquentes sur la plateforme</h2></div>
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="true" aria-controls="faqOne">Comment AfriTalent sélectionne les freelances ?</button></h3><div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"><div class="accordion-body">Chaque profil passe par une vérification du portfolio, des références et de la spécialisation déclarée.</div></div></div>
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">Les entreprises peuvent-elles publier plusieurs missions ?</button></h3><div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Oui, les plans payants permettent de gérer plusieurs briefs en parallèle avec des accès équipe.</div></div></div>
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree">Y a-t-il des frais de mise en relation ?</button></h3><div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Le plan choisi couvre l'accès à la plateforme. Les tarifs de mission sont ensuite négociés directement entre les parties.</div></div></div>
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour" aria-expanded="false" aria-controls="faqFour">Puis-je changer d'offre à tout moment ?</button></h3><div id="faqFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Oui, la montée ou la descente de plan est possible à tout moment depuis votre espace.</div></div></div>
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFive" aria-expanded="false" aria-controls="faqFive">AfriTalent convient-elle aux équipes internationales ?</button></h3><div id="faqFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Oui, la plateforme met en avant les langues parlées, la disponibilité horaire et l'expérience en travail distribué.</div></div></div>
         </div>
       </div>
     </section>
@@ -82,7 +97,7 @@
             <div class="row g-4">
                 <div class="col-lg-4"><h3>AfriTalent</h3><p>La vitrine digitale des meilleurs freelances tech d'Afrique pour des collaborations rapides, humaines et ambitieuses.</p><div class="social-links"><a href="#" aria-label="LinkedIn AfriTalent"><i class="bi bi-linkedin"></i></a><a href="#" aria-label="Instagram AfriTalent"><i class="bi bi-instagram"></i></a><a href="#" aria-label="X AfriTalent"><i class="bi bi-twitter-x"></i></a></div></div>
                 <div class="col-6 col-lg-2"><h3>Liens utiles</h3><ul class="footer-links"><li><a href="index.html">Accueil</a></li><li><a href="freelances.html">Freelances</a></li><li><a href="tarifs.html">Tarifs</a></li></ul></div>
-                <div class="col-6 col-lg-3"><h3>Ressources</h3><ul class="footer-links"><li><a href="about.html">Notre histoire</a></li><li><a href="#blog">Blog</a></li><li><a href="tarifs.html#faq">FAQ</a></li></ul></div>
+                <div class="col-6 col-lg-3"><h3>Ressources</h3><ul class="footer-links"><li><a href="about.html">Notre histoire</a></li><li><a href="index.html#blog">Blog</a></li><li><a href="tarifs.html#faq">FAQ</a></li></ul></div>
                 <div class="col-lg-3"><h3>Contact</h3><ul class="footer-links"><li><a href="mailto:ndounalandry99@gmail.com">ndounalandry99@gmail.com</a></li><li><a href="tel:+221788392089">+221 78 839 20 89</a></li><li>Dakar, Sénégal</li></ul></div>
             </div>
             <p>&copy; <span></span> AfriTalent. Tous droits réservés.</p>
