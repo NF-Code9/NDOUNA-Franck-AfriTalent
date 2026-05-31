@@ -40,32 +40,34 @@
   </header>
 
   <main>
-    <!-- Hero principal -->
-    <section class="hero-section">
+    <!-- Section Hero : mise en page asymétrique avec typographie expressive -->
+    <!-- col-lg-6 : divise l'écran en 2 colonnes sur grand écran -->
+    <!-- align-items-center : centre verticalement le contenu -->
+    <section class="section-hero">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6">
-            <span class="section-badge">Plateforme freelance africaine nouvelle génération</span>
-            <h1 class="hero-title">Les talents tech africains au cœur des projets qui comptent.</h1>
-            <h2 class="hero-subtitle">AfriTalent aide les entreprises à recruter vite et permet aux freelances de transformer leur expertise en missions durables.</h2>
+            <span class="badge-section">Plateforme freelance africaine nouvelle génération</span>
+            <h1 class="titre-hero">Les talents tech africains au cœur des projets qui comptent.</h1>
+            <h2 class="sous-titre-hero">AfriTalent aide les entreprises à recruter vite et permet aux freelances de transformer leur expertise en missions durables.</h2>
             <div class="d-flex gap-3 mt-4">
               <a class="btn btn-brand" href="freelances.html">Je suis Freelance</a>
               <a class="btn btn-outline-brand" href="contact.html">Je cherche un Freelance</a>
             </div>
-            <div class="stats-row" aria-label="Statistiques AfriTalent">
-              <article class="stat-card"><span>0</span>
+            <div class="ligne-stats" aria-label="Statistiques AfriTalent">
+              <article class="carte-stat"><span>0</span>
                 <p>freelances qualifiés</p>
               </article>
-              <article class="stat-card"><span>0</span>
+              <article class="carte-stat"><span>0</span>
                 <p>entreprises partenaires</p>
               </article>
-              <article class="stat-card"><span>0</span>
+              <article class="carte-stat"><span>0</span>
                 <p>missions réalisées</p>
               </article>
             </div>
           </div>
           <div class="col-lg-6">
-            <div class="hero-visual">
+            <div class="visuel-hero">
               <img src="images/hero-dashboard.svg" alt="Illustration d'un tableau de bord AfriTalent avec profils et statistiques">
             </div>
           </div>
@@ -73,28 +75,29 @@
       </div>
     </section>
 
-    <!-- Parcours utilisateur en Bento Grid -->
-    <section class="section-space">
+    <!-- Section "Comment ça marche" - Grille Bento avec CSS Grid -->
+    <!-- CSS Grid permet de créer des mises en page complexes facilement -->
+    <section class="section-espace">
       <div class="container">
-        <div class="section-heading mb-5">
-          <span class="section-badge">Comment ça marche</span>
+        <div class="entete-section mb-5">
+          <span class="badge-section">Comment ça marche</span>
           <h2>Un parcours simple pour lancer des collaborations solides</h2>
         </div>
-        <div class="bento-grid">
-          <article class="bento-card"><span class="step-number">01</span>
+        <div class="grille-bento">
+          <article class="carte-bento"><span class="numero-etape">01</span>
             <h3>Créez votre profil</h3>
             <p>Portfolio, compétences, langues et disponibilités sont mis en avant dans une fiche claire et
               professionnelle.</p>
           </article>
-          <article class="bento-card"><span class="step-number">02</span>
+          <article class="carte-bento"><span class="numero-etape">02</span>
             <h3>Trouvez le bon match</h3>
             <p>Les entreprises filtrent par spécialité et découvrent des profils adaptés à leurs enjeux.</p>
           </article>
-          <article class="bento-card"><span class="step-number">03</span>
+          <article class="carte-bento"><span class="numero-etape">03</span>
             <h3>Échangez en direct</h3>
             <p>Messagerie, brief, validation du scope et démarrage accéléré sur une seule plateforme.</p>
           </article>
-          <article class="bento-card"><span class="step-number">04</span>
+          <article class="carte-bento"><span class="numero-etape">04</span>
             <h3>Lancez vos missions</h3>
             <p>Suivi des livrables, paiements fluides et visibilité sur la performance des projets à chaque étape.</p>
           </article>
@@ -102,45 +105,46 @@
       </div>
     </section>
 
-    <!-- Bloc catégories -->
-    <section class="section-space">
+    <!-- Section Catégories de services avec effets hover -->
+    <!-- hover : effet quand la souris passe sur l'élément -->
+    <section class="section-espace">
       <div class="container">
-        <div class="section-heading mb-5"><span class="section-badge">Catégories de services</span>
+        <div class="entete-section mb-5"><span class="badge-section">Catégories de services</span>
           <h2>Des expertises prêtes à intervenir sur vos priorités business</h2>
         </div>
         <div class="row g-4">
           <div class="col-md-4">
-            <article class="service-card">
+            <article class="carte-service">
               <h3>Développement Web</h3>
               <p>640 freelances disponibles</p>
             </article>
           </div>
           <div class="col-md-4">
-            <article class="service-card">
+            <article class="carte-service">
               <h3>Design UI/UX</h3>
               <p>280 freelances disponibles</p>
             </article>
           </div>
           <div class="col-md-4">
-            <article class="service-card">
+            <article class="carte-service">
               <h3>Marketing Digital</h3>
               <p>310 freelances disponibles</p>
             </article>
           </div>
           <div class="col-md-4">
-            <article class="service-card">
+            <article class="carte-service">
               <h3>Data &amp; IA</h3>
               <p>190 freelances disponibles</p>
             </article>
           </div>
           <div class="col-md-4">
-            <article class="service-card">
+            <article class="carte-service">
               <h3>Rédaction Tech</h3>
               <p>150 freelances disponibles</p>
             </article>
           </div>
           <div class="col-md-4">
-            <article class="service-card">
+            <article class="carte-service">
               <h3>DevOps &amp; Cloud</h3>
               <p>225 freelances disponibles</p>
             </article>
@@ -149,59 +153,117 @@
       </div>
     </section>
 
-    <!-- Témoignages clients -->
-    <section class="section-space">
+    <!-- Témoignages clients - Carrousel Bootstrap -->
+    <!-- data-bs-ride="carousel" : active le défilement automatique -->
+    <!-- id="carouselTemoignages" : identifiant unique pour le carrousel -->
+    <section class="section-espace">
       <div class="container">
-        <div class="section-heading mb-5"><span class="section-badge">Témoignages</span>
+        <div class="entete-section mb-5">
+          <span class="badge-section">Témoignages</span>
           <h2>Ils ont grandi avec AfriTalent</h2>
         </div>
-        <div class="testimonials-shell">
-          <div class="testimonial-card">
-            <img src="images/avatar-aicha.svg" alt="Portrait illustré d'Aïcha, product designer" width="88" height="88">
-            <h3>Aïcha M.</h3>
-            <p class="role">Freelance Product Designer</p>
-            <p>AfriTalent m'a permis de signer des missions internationales sans perdre le lien avec l'écosystème africain.</p>
-            <div class="stars" aria-label="Note 5 sur 5"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+        
+        <!-- Carrousel Bootstrap : permet de faire défiler les témoignages -->
+        <div id="carouselTemoignages" class="carousel slide" data-bs-ride="carousel">
+          
+          <!-- Indicateurs (les petits points en bas) -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselTemoignages" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Témoignage 1"></button>
+            <button type="button" data-bs-target="#carouselTemoignages" data-bs-slide-to="1" aria-label="Témoignage 2"></button>
+            <button type="button" data-bs-target="#carouselTemoignages" data-bs-slide-to="2" aria-label="Témoignage 3"></button>
           </div>
-          <div class="testimonial-card">
-            <img src="images/avatar-daniel.svg" alt="Portrait illustré de Daniel, CTO" width="88" height="88">
-            <h3>Daniel O.</h3>
-            <p class="role">CTO, Fintech Lagos</p>
-            <p>Nous avons trouvé un développeur backend senior en moins de deux jours, avec un niveau de communication excellent.</p>
-            <div class="stars" aria-label="Note 5 sur 5"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+          
+          <!-- Contenu du carrousel : les slides (les témoignages) -->
+          <div class="carousel-inner">
+            
+            <!-- Slide 1 : active = premier témoignage affiché -->
+            <div class="carousel-item active">
+              <div class="carte-temoignage">
+                <img src="images/avatar-aicha.svg" alt="Portrait illustré d'Aïcha, product designer" width="88" height="88">
+                <h3>Aïcha M.</h3>
+                <p class="role">Freelance Product Designer</p>
+                <p>AfriTalent m'a permis de signer des missions internationales sans perdre le lien avec l'écosystème africain.</p>
+                <div class="stars" aria-label="Note 5 sur 5">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+              <div class="carte-temoignage">
+                <img src="images/avatar-daniel.svg" alt="Portrait illustré de Daniel, CTO" width="88" height="88">
+                <h3>Daniel O.</h3>
+                <p class="role">CTO, Fintech Lagos</p>
+                <p>Nous avons trouvé un développeur backend senior en moins de deux jours, avec un niveau de communication excellent.</p>
+                <div class="stars" aria-label="Note 5 sur 5">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+              <div class="carte-temoignage">
+                <img src="images/avatar-fatou.svg" alt="Portrait illustré de Fatou, consultante data" width="88" height="88">
+                <h3>Fatou S.</h3>
+                <p class="role">Freelance Data Analyst</p>
+                <p>La plateforme rassure les clients, sécurise les briefs et me fait gagner un temps précieux sur la prospection.</p>
+                <div class="stars" aria-label="Note 5 sur 5">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+              </div>
+            </div>
+            
           </div>
-          <div class="testimonial-card">
-            <img src="images/avatar-fatou.svg" alt="Portrait illustré de Fatou, consultante data" width="88" height="88">
-            <h3>Fatou S.</h3>
-            <p class="role">Freelance Data Analyst</p>
-            <p>La plateforme rassure les clients, sécurise les briefs et me fait gagner un temps précieux sur la prospection.</p>
-            <div class="stars" aria-label="Note 5 sur 5"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-          </div>
+          
+          <!-- Boutons de navigation (flèches gauche/droite) -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselTemoignages" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Précédent</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselTemoignages" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Suivant</span>
+          </button>
+          
         </div>
       </div>
     </section>
 
     <!-- Articles de contenu -->
-    <section id="blog" class="section-space">
+    <section id="blog" class="section-espace">
       <div class="container">
-        <div class="section-heading mb-5"><span class="section-badge">Blog</span>
+        <div class="entete-section mb-5"><span class="badge-section">Blog</span>
           <h2>Ressources pour mieux collaborer avec les talents tech africains</h2>
         </div>
         <div class="row g-4">
           <div class="col-md-4">
-            <article class="blog-card"><span class="section-badge">Marché</span>
+            <article class="carte-blog"><span class="badge-section">Marché</span>
               <h3>Pourquoi l'Afrique devient un hub freelance stratégique</h3>
               <p>Analyse des dynamiques régionales, des compétences les plus demandées et des nouvelles attentes des entreprises.</p>
             </article>
           </div>
           <div class="col-md-4">
-            <article class="blog-card"><span class="section-badge">Productivité</span>
+            <article class="carte-blog"><span class="badge-section">Productivité</span>
               <h3>Créer un brief qui attire les meilleurs profils</h3>
               <p>Une structure simple pour obtenir plus vite des propositions claires, réalistes et pertinentes.</p>
             </article>
           </div>
           <div class="col-md-4">
-            <article class="blog-card"><span class="section-badge">Carrière</span>
+            <article class="carte-blog"><span class="badge-section">Carrière</span>
               <h3>Construire une marque freelance crédible en 2026</h3>
               <p>Portfolio, tarification, spécialisation et relation client : les signaux qui font la différence.</p>
             </article>
@@ -211,11 +273,11 @@
     </section>
 
     <!-- Appel à l'action final -->
-    <section class="section-space">
+    <section class="section-espace">
       <div class="container">
-        <div class="cta-banner">
+        <div class="banniere-cta">
           <div>
-            <span class="section-badge">Passez à l'action</span>
+            <span class="badge-section">Passez à l'action</span>
             <h2>Rejoignez une plateforme pensée pour les freelances et les entreprises africaines.</h2>
           </div>
           <div class="d-flex gap-3">
@@ -233,11 +295,11 @@
         <div class="col-lg-4">
           <h3>AfriTalent</h3>
           <p>La vitrine digitale des meilleurs freelances tech d'Afrique pour des collaborations rapides, humaines et ambitieuses.</p>
-          <div class="social-links"><a href="#" aria-label="LinkedIn AfriTalent"><i class="bi bi-linkedin"></i></a><a href="#" aria-label="Instagram AfriTalent"><i class="bi bi-instagram"></i></a><a href="#" aria-label="X AfriTalent"><i class="bi bi-twitter-x"></i></a></div>
+          <div class="liens-sociaux"><a href="#" aria-label="LinkedIn AfriTalent"><i class="bi bi-linkedin"></i></a><a href="#" aria-label="Instagram AfriTalent"><i class="bi bi-instagram"></i></a><a href="#" aria-label="X AfriTalent"><i class="bi bi-twitter-x"></i></a></div>
         </div>
         <div class="col-6 col-lg-2">
           <h3>Liens utiles</h3>
-          <ul class="footer-links">
+          <ul class="liens-footer">
             <li><a href="index.html">Accueil</a></li>
             <li><a href="freelances.html">Freelances</a></li>
             <li><a href="tarifs.html">Tarifs</a></li>
@@ -245,7 +307,7 @@
         </div>
         <div class="col-6 col-lg-3">
           <h3>Ressources</h3>
-          <ul class="footer-links">
+          <ul class="liens-footer">
             <li><a href="about.html">Notre histoire</a></li>
             <li><a href="index.html#blog">Blog</a></li>
             <li><a href="tarifs.html#faq">FAQ</a></li>
@@ -253,7 +315,7 @@
         </div>
         <div class="col-lg-3">
           <h3>Contact</h3>
-          <ul class="footer-links">
+          <ul class="liens-footer">
             <li><a href="mailto:ndounalandry99@gmail.com">ndounalandry99@gmail.com</a></li>
             <li><a href="tel:+221788392089">+221 78 839 20 89</a></li>
             <li>Dakar, Sénégal</li>

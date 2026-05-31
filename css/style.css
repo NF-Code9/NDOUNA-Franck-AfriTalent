@@ -1,29 +1,40 @@
-/* VARIABLES CSS */
+/* ============================================
+   VARIABLES CSS
+   ============================================
+   Les variables CSS permettent de définir des valeurs réutilisables
+   dans tout le fichier. Si on change une couleur ici, elle change partout.
+*/
 :root {
-  --color-bg: #f7f2e8;
-  --color-surface: #fffdf8;
-  --color-surface-strong: #f0e5d1;
-  --color-text: #1d1b18;
-  --color-muted: #6c655d;
-  --color-primary: #c96f2d;
-  --color-secondary: #0f766e;
-  --color-accent: #8f3f2b;
-  --color-border: rgba(29, 27, 24, 0.12);
-  --shadow-soft: 0 20px 40px rgba(30, 22, 12, 0.08);
-  --radius-xl: 28px;
-  --radius-lg: 20px;
-  --navbar-height: 88px;
+  --couleur-fond: #f7f2e8;
+  --couleur-surface: #fffdf8;
+  --couleur-surface-forte: #f0e5d1;
+  --couleur-texte: #1d1b18;
+  --couleur-attenu: #6c655d;
+  --couleur-primaire: #c96f2d;
+  --couleur-secondaire: #0f766e;
+  --couleur-accent: #8f3f2b;
+  --couleur-bordure: rgba(29, 27, 24, 0.12);
+  --ombre-douce: 0 20px 40px rgba(30, 22, 12, 0.08);
+  --rayon-xl: 28px;
+  --rayon-lg: 20px;
+  --hauteur-navbar: 88px;
 }
 
-/* RESET ET STYLES DE BASE */
+/* ============================================
+   RESET ET STYLES DE BASE
+   ============================================
+   Le reset permet de partir sur des bases communes entre tous les navigateurs.
+   * : s'applique à tous les éléments
+   box-sizing: border-box : inclut le padding et la bordure dans la taille totale
+*/
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
   font-family: "Plus Jakarta Sans", sans-serif;
-  background: var(--color-bg);
-  color: var(--color-text);
+  background: var(--couleur-fond);
+  color: var(--couleur-texte);
   line-height: 1.7;
 }
 
@@ -31,21 +42,298 @@ img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 h1, h2, h3, .navbar-brand span { font-family: "Space Grotesk", sans-serif; line-height: 1.1; }
 
-/* SECTIONS */
+/* ============================================
+   SECTIONS DE BASE
+   ============================================
+   Ces classes gèrent l'espacement entre les sections principales.
+*/
 .page-hero { padding: 4rem 0 2rem; }
-.section-space { padding: 5rem 0; }
+.section-espace { padding: 5rem 0; }
 
-.section-badge {
+/* ============================================
+   SECTION HERO
+   ============================================
+   La section hero est la première section visible sur la page.
+   Elle utilise une mise en page asymétrique (texte à gauche, image à droite).
+*/
+.section-hero {
+  padding-top: calc(var(--hauteur-navbar) + 2rem);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-bottom: 5rem;
+}
+
+.titre-hero {
+  font-size: clamp(2.9rem, 5vw, 5.6rem);
+  margin: 1rem 0;
+  max-width: 11ch;
+}
+
+.sous-titre-hero {
+  font-size: 1.1rem;
+  color: var(--couleur-attenu);
+  max-width: 60ch;
+}
+
+.visuel-hero {
+  position: relative;
+  padding: 2rem;
+}
+
+/* Ligne de statistiques : utilise CSS Grid pour 3 colonnes égales */
+.ligne-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.carte-stat {
+  background: var(--couleur-surface);
+  border: 1px solid var(--couleur-bordure);
+  border-radius: var(--rayon-xl);
+  box-shadow: var(--ombre-douce);
+  padding: 1.5rem;
+}
+
+.carte-stat span {
+  display: block;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: var(--couleur-primaire);
+}
+
+.entete-section h2 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  margin-top: 1rem;
+  max-width: 16ch;
+}
+
+.badge-section {
   display: inline-block;
   padding: .45rem .9rem;
   border-radius: 999px;
-  background: var(--color-surface-strong);
-  color: var(--color-secondary);
+  background: var(--couleur-surface-forte);
+  color: var(--couleur-secondaire);
   font-weight: 700;
   font-size: .85rem;
 }
 
-/* NAVBAR */
+/* ============================================
+   GRILLE BENTO (Comment ça marche)
+   ============================================
+   CSS Grid permet de créer des mises en page complexes facilement.
+   grid-template-columns: repeat(12, 1fr) : crée 12 colonnes égales
+   grid-column: span 4 : chaque carte occupe 4 colonnes (donc 3 cartes par ligne)
+*/
+.grille-bento {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+}
+
+.carte-bento {
+  grid-column: span 4;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--couleur-surface);
+  border: 1px solid var(--couleur-bordure);
+  border-radius: var(--rayon-xl);
+  box-shadow: var(--ombre-douce);
+  padding: 1.5rem;
+}
+
+.numero-etape {
+  color: var(--couleur-attenu);
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+
+/* ============================================
+   CARTES DE SERVICES AVEC EFFET HOVER
+   ============================================
+   L'effet hover se déclenche quand la souris passe sur l'élément.
+   transition : définit la durée et le type d'animation
+   transform translateY(-8px) : soulève la carte de 8px vers le haut
+*/
+.carte-service {
+  min-height: 220px;
+  background: var(--couleur-surface);
+  border: 1px solid var(--couleur-bordure);
+  border-radius: var(--rayon-xl);
+  box-shadow: var(--ombre-douce);
+  padding: 1.5rem;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.carte-service:hover, .carte-service:focus-within {
+  transform: translateY(-8px);
+  border-color: rgba(201, 111, 45, .4);
+}
+
+/* ============================================
+   TÉMOIGNAGES (Carrousel Bootstrap)
+   ============================================
+   Les styles pour les cartes de témoignages.
+   Le carrousel lui-même est géré par Bootstrap.
+*/
+.carte-temoignage {
+  background: var(--couleur-surface);
+  border: 1px solid var(--couleur-bordure);
+  border-radius: var(--rayon-xl);
+  box-shadow: var(--ombre-douce);
+  padding: 1.5rem;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.carte-temoignage img {
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+}
+
+.role {
+  color: var(--couleur-attenu);
+}
+
+.stars {
+  color: #f4b942;
+}
+
+/* ============================================
+   CARTES DE BLOG
+   ============================================
+*/
+.carte-blog {
+  background: var(--couleur-surface);
+  border: 1px solid var(--couleur-bordure);
+  border-radius: var(--rayon-xl);
+  box-shadow: var(--ombre-douce);
+  padding: 1.5rem;
+}
+
+/* ============================================
+   BANNIÈRE CTA (Appel à l'action)
+   ============================================
+   background: linear-gradient : crée un dégradé de couleurs
+*/
+.banniere-cta {
+  padding: 2rem;
+  border-radius: calc(var(--rayon-xl) + 6px);
+  background: linear-gradient(135deg, rgba(15, 118, 110, .92), rgba(201, 111, 45, .9)), var(--couleur-secondaire);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* ============================================
+   CARTES D'ÉQUIPE (page À propos)
+   ============================================
+*/
+.carte-equipe {
+  background: var(--couleur-surface);
+  border: 1px solid var(--couleur-bordure);
+  border-radius: var(--rayon-xl);
+  box-shadow: var(--ombre-douce);
+  padding: 1.5rem;
+  text-align: center;
+  height: 100%;
+}
+
+.carte-equipe img {
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+}
+
+/* ============================================
+   CARTES DE VALEURS (page À propos)
+   ============================================
+*/
+.carte-valeur {
+  background: var(--couleur-surface);
+  border: 1px solid var(--couleur-bordure);
+  border-radius: var(--rayon-xl);
+  box-shadow: var(--ombre-douce);
+  padding: 1.5rem;
+  text-align: center;
+  height: 100%;
+}
+
+.carte-valeur i {
+  font-size: 2rem;
+  color: var(--couleur-secondaire);
+}
+
+/* ============================================
+   CARTES DE TARIFICATION (page Tarifs)
+   ============================================
+*/
+.carte-tarif {
+  position: relative;
+  height: 100%;
+  background: var(--couleur-surface);
+  border: 1px solid var(--couleur-bordure);
+  border-radius: var(--rayon-xl);
+  box-shadow: var(--ombre-douce);
+  padding: 1.5rem;
+}
+
+.carte-tarif.vedette {
+  border: 2px solid var(--couleur-primaire);
+  transform: scale(1.03);
+}
+
+.badge-populaire {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--couleur-primaire);
+  color: #fff;
+  padding: .35rem .75rem;
+  border-radius: 999px;
+  font-size: .85rem;
+  font-weight: 700;
+}
+
+.prix {
+  font-size: 2.8rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+}
+
+.prix span {
+  color: var(--couleur-attenu);
+}
+
+.liste-tarifs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.liste-tarifs li {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: .75rem;
+}
+
+.liste-tarifs li.attenu {
+  color: var(--couleur-attenu);
+}
+
+/* ============================================
+   NAVBAR
+   ============================================
+   backdrop-filter: blur : crée un effet de flou en arrière-plan
+*/
 .site-navbar {
   padding: 1rem 0;
   background: rgba(247, 242, 232, .72);
@@ -54,156 +342,168 @@ h1, h2, h3, .navbar-brand span { font-family: "Space Grotesk", sans-serif; line-
 }
 
 .navbar-brand span { font-size: 1.25rem; font-weight: 700; }
-.nav-link { font-weight: 600; color: var(--color-muted); }
-.nav-link.active, .nav-link:hover { color: var(--color-text); }
+.nav-link { font-weight: 600; color: var(--couleur-attenu); }
+.nav-link.active, .nav-link:hover { color: var(--couleur-texte); }
 
-/* BOUTONS */
+/* ============================================
+   BOUTONS
+   ============================================
+*/
 .btn-brand, .filter-btn { border-radius: 999px; font-weight: 700; }
 
 .btn-brand {
-  background: var(--color-primary);
+  background: var(--couleur-primaire);
   color: #fff;
-  border: 1px solid var(--color-primary);
+  border: 1px solid var(--couleur-primaire);
 }
 
 .btn-brand:hover {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
+  background: var(--couleur-accent);
+  border-color: var(--couleur-accent);
   color: #fff;
 }
 
 .filter-btn {
   padding: .8rem 1.1rem;
-  border: 1px solid var(--color-border);
-  background: var(--color-surface);
-  color: var(--color-text);
+  border: 1px solid var(--couleur-bordure);
+  background: var(--couleur-surface);
+  color: var(--couleur-texte);
 }
 
 .filter-btn.active {
-  background: var(--color-text);
-  color: var(--color-bg);
+  background: var(--couleur-texte);
+  color: var(--couleur-fond);
 }
 
-.filter-bar { display: flex; flex-wrap: wrap; gap: .75rem; }
+.barre-filtres { display: flex; flex-wrap: wrap; gap: .75rem; }
 
-/* CARTES FREELANCER */
-.freelancer-card {
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
+/* ============================================
+   CARTES FREELANCER (page Freelances)
+   ============================================
+*/
+.carte-freelance {
+  border: 1px solid var(--couleur-bordure);
+  border-radius: var(--rayon-xl);
   overflow: hidden;
-  background: var(--color-surface);
-  box-shadow: var(--shadow-soft);
+  background: var(--couleur-surface);
+  box-shadow: var(--ombre-douce);
 }
 
-.freelancer-card img {
+.carte-freelance img {
   aspect-ratio: 4 / 3;
   object-fit: cover;
   background: linear-gradient(135deg, #edd5bd, #d6efe7);
 }
 
-.text-accent, .profile-meta { color: var(--color-muted); }
-.profile-meta {
+.texte-accent, .meta-profil { color: var(--couleur-attenu); }
+.meta-profil {
   display: flex;
   justify-content: space-between;
   font-weight: 700;
 }
 
 .btn-outline-brand {
-  border: 1px solid var(--color-text);
-  color: var(--color-text);
+  border: 1px solid var(--couleur-texte);
+  color: var(--couleur-texte);
   border-radius: 999px;
   font-weight: 700;
 }
 
 .btn-outline-brand:hover {
-  background: var(--color-text);
-  color: var(--color-bg);
+  background: var(--couleur-texte);
+  color: var(--couleur-fond);
 }
 
-/* FORMULAIRE DE CONTACT */
-.contact-form {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-soft);
+/* ============================================
+   FORMULAIRE DE CONTACT (page Contact)
+   ============================================
+*/
+.formulaire-contact {
+  background: var(--couleur-surface);
+  border: 1px solid var(--couleur-bordure);
+  border-radius: var(--rayon-xl);
+  box-shadow: var(--ombre-douce);
   padding: 1.5rem;
 }
 
-.contact-form .form-control,
-.contact-form .form-select {
+.formulaire-contact .form-control,
+.formulaire-contact .form-select {
   border-radius: 1rem;
-  border: 1px solid var(--color-border);
-  background: var(--color-surface);
-  color: var(--color-text);
+  border: 1px solid var(--couleur-bordure);
+  background: var(--couleur-surface);
+  color: var(--couleur-texte);
   padding: .85rem 1rem;
 }
 
-.contact-form .form-control:focus,
-.contact-form .form-select:focus {
+.formulaire-contact .form-control:focus,
+.formulaire-contact .form-select:focus {
   box-shadow: 0 0 0 .2rem rgba(201, 111, 45, .18);
-  border-color: var(--color-primary);
+  border-color: var(--couleur-primaire);
 }
 
-.field-error {
+.erreur-champ {
   display: block;
   min-height: 1.4rem;
   margin-top: .35rem;
   color: #c0392b;
 }
 
-.form-success {
+.succes-formulaire {
   display: none;
   padding: 1rem;
   border-radius: 1rem;
   background: rgba(15, 118, 110, .12);
-  color: var(--color-secondary);
+  color: var(--couleur-secondaire);
   font-weight: 700;
 }
 
-.contact-list {
+.liste-contact {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.contact-list li {
+.liste-contact li {
   display: flex;
   align-items: center;
   gap: .75rem;
   margin-bottom: 1rem;
 }
 
-.contact-info {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-soft);
+.info-contact {
+  background: var(--couleur-surface);
+  border: 1px solid var(--couleur-bordure);
+  border-radius: var(--rayon-xl);
+  box-shadow: var(--ombre-douce);
   padding: 1.5rem;
 }
 
-.map-wrapper iframe { width: 100%; min-height: 320px; border: 0; border-radius: var(--radius-lg); }
+.wrapper-carte iframe { width: 100%; min-height: 320px; border: 0; border-radius: var(--rayon-lg); }
 
-/* FOOTER */
+/* ============================================
+   FOOTER
+   ============================================
+*/
 .site-footer {
   padding: 3.5rem 0 1.5rem;
   background: #16120f;
   color: #f8efe4;
 }
 
-.footer-links {
+.liens-footer {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.footer-links li + li { margin-top: .75rem; }
+.liens-footer li + li { margin-top: .75rem; }
 
-.social-links {
+.liens-sociaux {
   display: flex;
   gap: .75rem;
 }
 
-.social-links a {
+.liens-sociaux a {
   width: 40px;
   height: 40px;
   display: inline-flex;
