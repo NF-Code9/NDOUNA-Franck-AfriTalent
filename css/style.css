@@ -244,3 +244,61 @@ h1, h2, h3, .navbar-brand span { font-family: "Space Grotesk", sans-serif; line-
     min-height: 100vh; /* Reprend toute la hauteur de l'écran */
   }
 }
+
+/* ==========================================================================
+   STYLES COMPLÉMENTAIRES POUR LE JAVASCRIPT
+   ========================================================================== */
+
+/* Classes pour le Thème Sombre (Dark Mode) */
+body.theme-sombre {
+  --couleur-fond: #121212;
+  --couleur-surface: #1e1e1e;
+  --couleur-surface-forte: #2a2a2a;
+  --couleur-texte: #f7f2e8;
+  --couleur-attenu: #a39c93;
+  --couleur-bordure: rgba(247, 242, 232, 0.15);
+  --ombre-douce: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Classe pour la Navbar dynamique lors du défilement (Scroll) */
+.site-navbar.navbar-defilement {
+  padding: 0.4rem 0; /* Réduction de la hauteur (effet shrink) */
+  background-color: var(--couleur-surface) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Ombre plus marquée */
+}
+
+/* Style de base pour le bouton "Retour en haut" */
+.btn-remonter {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  background-color: var(--couleur-primaire);
+  color: white;
+  border: none;
+  outline: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  
+  /* Effet de transition pour une apparition en douceur */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  
+  /* Par défaut, le bouton est invisible et légèrement descendu */
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none; /* Empêche de cliquer dessus quand il est invisible */
+}
+
+/* Classe ajoutée par JavaScript pour afficher le bouton */
+.btn-remonter.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto; /* Permet le clic quand il devient visible */
+}
