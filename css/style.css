@@ -302,3 +302,21 @@ body.theme-sombre {
   transform: translateY(0);
   pointer-events: auto; /* Permet le clic quand il devient visible */
 }
+
+/* ==========================================================================
+   STYLES POUR LES ANIMATIONS JAVASCRIPT
+   ========================================================================== */
+
+/* 1. État initial : La section est invisible (opacity: 0) et légèrement décalée vers le bas (20px) */
+.section-animee {
+  opacity: 0;
+  transform: translateY(20px);
+  /* transition permet un effet fluide qui dure 0.8 seconde */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* 2. État animé : Quand JavaScript ajoutera la classe .visible, la section apparaîtra */
+.section-animee.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

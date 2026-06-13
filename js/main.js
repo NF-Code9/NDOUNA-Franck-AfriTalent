@@ -103,4 +103,94 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  /* ------------------------------------------------------------------------
+     ANIMATION 1 : LES COMPTEURS DE STATISTIQUES DYNAMIQUES
+     ------------------------------------------------------------------------ */
+
+  // Cette fonction s'occupe de faire grimper le chiffre d'un compteur de 0 à sa cible
+  function lancerAnimationChiffre(baliseChiffre) {
+    // On récupère la valeur finale stockée dans l'attribut HTML data-cible (ex: "1200")
+    // Le parseInt permet de transformer du texte en un vrai nombre mathématique
+    const valeurCible = parseInt(baliseChiffre.getAttribute("data-cible"));
+    
+    // On commence le compteur à 0
+    let valeurActuelle = 0;
+    
+    // Vitesse de l'animation : plus le chiffre est grand, plus on augmente vite
+    // On divise par 50 pour que l'animation dure environ la même durée pour tous
+    const increment = Math.ceil(valeurCible / 50);
+
+    // setInterval permet de répéter une action toutes les X millisecondes (ici toutes les 30ms)
+    const minuteur = setInterval(function () {
+      // On ajoute l'incrément à la valeur actuelle
+      valeurActuelle = valeurActuelle + increment;
+
+      // Si on a atteint ou dépassé la cible :
+      if (valeurActuelle >= valeurCible) {
+        valeurActuelle = valeurCible; // On force la valeur pile sur la cible
+        clearInterval(minuteur); // On arrête définitivement le minuteur répété
+      }
+
+      // On met à jour le texte affiché sur la page HTML
+      baliseChiffre.textContent = valeurActuelle;
+    }, 30); // 30 millisecondes d'attente entre chaque étape
+  }
+
+  // Configuration du surveillant pour les chiffres
+  const observateurChiffres = new IntersectionObserver(function (entrées, surveillant) {
+    // Le surveillant nous donne une liste d'éléments qu'il a vus bouger
+    entrées.forEach(function (entrée) {
+      // Est-ce que l'élément est devenu visible à l'écran ?
+      if (entrée.isIntersecting) {
+        // On récupère la balise HTML exacte du chiffre
+        const chiffreAAnimer = entrée.target;
+        
+        // On lance l'animation de défilement
+        lancerAnimationChiffre(chiffreAAnimer);
+        
+        // Très important : On dit au surveillant d'arrêter de regarder ce chiffre.
+        // Comme ça, l'animation ne se re-déclenche pas si on remonte et redescend.
+        surveillant.unobserve(chiffreAAnimer);
+      }
+    });
+  });
+
+  // On sélectionne tous nos compteurs dans la page
+  const tousLesCompteurs = document.querySelectorAll(".compteur-stat");
+  
+  // On donne chaque compteur à notre surveillant pour qu'il les guette
+  tousLesCompteurs.forEach(function (compteur) {
+    observateurChiffres.observe(compteur);
+  });
+
+
+  /* ------------------------------------------------------------------------
+     ANIMATION 2 : LES FONDUS DE SECTIONS (FADE-IN AU SCROLL)
+     ------------------------------------------------------------------------ */
+
+  // Configuration du surveillant pour les apparitions de sections
+  const observateurSections = new IntersectionObserver(function (entrées, surveillant) {
+    entrées.forEach(function (entrée) {
+      // Si la section arrive dans l'écran de l'utilisateur :
+      if (entrée.isIntersecting) {
+        // On lui ajoute la classe CSS ".visible" qui déclenche l'effet de transition CSS
+        entrée.target.classList.add("visible");
+        
+        // On arrête de surveiller cette section puisqu'elle est affichée définitivement
+        surveillant.unobserve(entrée.target);
+      }
+    });
+  }, {
+    // Option du surveillant : déclencher l'action dès que 15% de la section est visible
+    threshold: 0.15 
+  });
+
+  // On sélectionne toutes les sections qui doivent s'animer
+  const toutesLesSections = document.querySelectorAll(".section-animee");
+
+  // On demande au surveillant de regarder chacune de ces sections
+  toutesLesSections.forEach(function (section) {
+    observateurSections.observe(section);
+  });
+
 });

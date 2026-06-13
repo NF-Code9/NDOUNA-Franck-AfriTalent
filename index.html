@@ -48,7 +48,7 @@
         <!-- Section Hero : mise en page asymétrique avec typographie expressive -->
         <!-- col-lg-6 : divise l'écran en 2 colonnes sur grand écran -->
         <!-- align-items-center : centre verticalement le contenu -->
-        <section class="section-hero">
+        <section class="section-hero section-animee">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
@@ -60,13 +60,16 @@
                             <a class="btn btn-outline-brand" href="contact.html">Je cherche un Freelance</a>
                         </div>
                         <div class="ligne-stats" aria-label="Statistiques AfriTalent">
-                            <article class="carte-stat"><span>0</span>
+                            <article class="carte-stat">
+                                <span class="compteur-stat" data-cible="1200">0</span>
                                 <p>freelances qualifiés</p>
                             </article>
-                            <article class="carte-stat"><span>0</span>
+                            <article class="carte-stat">
+                                <span class="compteur-stat" data-cible="1200">0</span>
                                 <p>entreprises partenaires</p>
                             </article>
-                            <article class="carte-stat"><span>0</span>
+                            <article class="carte-stat">
+                                <span class="compteur-stat" data-cible="1200">0</span>
                                 <p>missions réalisées</p>
                             </article>
                         </div>
@@ -83,7 +86,7 @@
 
         <!-- Section "Comment ça marche" - Grille Bento avec CSS Grid -->
         <!-- CSS Grid permet de créer des mises en page complexes facilement -->
-        <section class="section-espace">
+        <section class="section-espace section-animee">
             <div class="container">
                 <div class="entete-section mb-5">
                     <span class="badge-section">Comment ça marche</span>
@@ -112,7 +115,7 @@
 
         <!-- Section Catégories de services avec effets hover -->
         <!-- hover : effet quand la souris passe sur l'élément -->
-        <section class="section-espace">
+        <section class="section-espace section-animee">
             <div class="container">
                 <div class="entete-section mb-5"><span class="badge-section">Catégories de services</span>
                     <h2>Des expertises prêtes à intervenir sur vos priorités business</h2>
@@ -161,7 +164,7 @@
         <!-- Témoignages clients - Carrousel Bootstrap -->
         <!-- data-bs-ride="carousel" : active le défilement automatique -->
         <!-- id="carouselTemoignages" : identifiant unique pour le carrousel -->
-        <section class="section-espace">
+        <section class="section-espace section-animee">
             <div class="container">
                 <div class="entete-section mb-5">
                     <span class="badge-section">Témoignages</span>
@@ -173,12 +176,9 @@
 
                     <!-- Indicateurs (les petits points en bas) -->
                     <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselTemoignages" data-bs-slide-to="0" class="active"
-                            aria-current="true" aria-label="Témoignage 1"></button>
-                        <button type="button" data-bs-target="#carouselTemoignages" data-bs-slide-to="1"
-                            aria-label="Témoignage 2"></button>
-                        <button type="button" data-bs-target="#carouselTemoignages" data-bs-slide-to="2"
-                            aria-label="Témoignage 3"></button>
+                        <button type="button" data-bs-target="#carouselTemoignages" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Témoignage 1"></button>
+                        <button type="button" data-bs-target="#carouselTemoignages" data-bs-slide-to="1" aria-label="Témoignage 2"></button>
+                        <button type="button" data-bs-target="#carouselTemoignages" data-bs-slide-to="2" aria-label="Témoignage 3"></button>
                     </div>
 
                     <!-- Contenu du carrousel : les slides (les témoignages) -->
@@ -187,12 +187,13 @@
                         <!-- Slide 1 : active = premier témoignage affiché -->
                         <div class="carousel-item active">
                             <div class="carte-temoignage">
-                                <img src="images/avatar-aicha.svg" alt="Portrait illustré d'Aïcha, product designer"
-                                    width="88" height="88">
+                                <img src="images/avatar-aicha.svg" alt="Portrait illustré d'Aïcha, product designer" width="88" height="88">
                                 <h3>Aïcha M.</h3>
                                 <p class="role">Freelance Product Designer</p>
-                                <p>AfriTalent m'a permis de signer des missions internationales sans perdre le lien avec
-                                    l'écosystème africain.</p>
+                                <p>
+                                    AfriTalent m'a permis de signer des missions internationales sans perdre le lien avec
+                                    l'écosystème africain.
+                                </p>
                                 <div class="stars" aria-label="Note 5 sur 5">
                                     <i class="bi bi-star-fill"></i>
                                     <i class="bi bi-star-fill"></i>
@@ -225,12 +226,13 @@
                         <!-- Slide 3 -->
                         <div class="carousel-item">
                             <div class="carte-temoignage">
-                                <img src="images/avatar-fatou.svg" alt="Portrait illustré de Fatou, consultante data"
-                                    width="88" height="88">
+                                <img src="images/avatar-fatou.svg" alt="Portrait illustré de Fatou, consultante data" width="88" height="88">
                                 <h3>Fatou S.</h3>
                                 <p class="role">Freelance Data Analyst</p>
-                                <p>La plateforme rassure les clients, sécurise les briefs et me fait gagner un temps
-                                    précieux sur la prospection.</p>
+                                <p>
+                                    La plateforme rassure les clients, sécurise les briefs et me fait gagner un temps
+                                    précieux sur la prospection.
+                                </p>
                                 <div class="stars" aria-label="Note 5 sur 5">
                                     <i class="bi bi-star-fill"></i>
                                     <i class="bi bi-star-fill"></i>
@@ -244,13 +246,11 @@
                     </div>
 
                     <!-- Boutons de navigation (flèches gauche/droite) -->
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselTemoignages"
-                        data-bs-slide="prev">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselTemoignages" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Précédent</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselTemoignages"
-                        data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselTemoignages" data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Suivant</span>
                     </button>
@@ -260,7 +260,7 @@
         </section>
 
         <!-- Articles de contenu -->
-        <section id="blog" class="section-espace">
+        <section id="blog" class="section-espace section-animee">
             <div class="container">
                 <div class="entete-section mb-5"><span class="badge-section">Blog</span>
                     <h2>Ressources pour mieux collaborer avec les talents tech africains</h2>
@@ -292,7 +292,7 @@
         </section>
 
         <!-- Appel à l'action final -->
-        <section class="section-espace">
+        <section class="section-espace section-animee">
             <div class="container">
                 <div class="banniere-cta">
                     <div>
