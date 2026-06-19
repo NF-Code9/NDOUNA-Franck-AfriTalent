@@ -320,3 +320,11 @@ body.theme-sombre {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Filtre */
+
+/* Classe pour masquer les éléments en JavaScript */
+/* Permet de cacher les cartes de freelances filtrées */
+.masquer-element {
+  display: none !important;
+}

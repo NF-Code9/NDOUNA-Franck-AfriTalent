@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AfriTalent — Contact</title>
-    
+
     <!-- Bootstrap 5 via CDN : feuille de style -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -15,12 +16,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-lg fixed-top site-navbar" aria-label="Navigation principale">
             <div class="container">
-                <a class="navbar-brand d-flex align-items-center gap-2" href="index.html"><img src="images/logo-afritalent.svg" alt="Logo AfriTalent" width="42" height="42"><span>AfriTalent</span></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Ouvrir le menu"><span class="navbar-toggler-icon"></span></button>
+                <a class="navbar-brand d-flex align-items-center gap-2" href="index.html"><img
+                        src="images/logo-afritalent.svg" alt="Logo AfriTalent" width="42"
+                        height="42"><span>AfriTalent</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                    aria-controls="mainNavbar" aria-expanded="false" aria-label="Ouvrir le menu"><span
+                        class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="mainNavbar">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
@@ -41,80 +47,95 @@
         </nav>
     </header>
 
-  <main id="main-content">
-    <section class="page-hero section-animee">
-      <div class="container">
-        <div class="text-center">
-          <span class="badge-section">Contact</span>
-          <h1>Parlez-nous de votre besoin ou de votre profil, et nous revenons vers vous rapidement.</h1>
-        </div>
-      </div>
-    </section>
-    <section class="section-espace section-animee">
-      <div class="container">
-        <div class="row g-4">
-          <div class="col-lg-7">
-            <form id="contactForm" novalidate class="formulaire-contact">
-              <div class="mb-3">
-                <label for="nom" class="form-label">Nom</label>
-                <input type="text" class="form-control" id="nom" name="nom" aria-describedby="nomError">
-                <small id="nomError" class="erreur-champ"></small>
-              </div>
-              <div class="mb-3">
-                <label for="prenom" class="form-label">Prénom</label>
-                <input type="text" class="form-control" id="prenom" name="prenom" aria-describedby="prenomError">
-                <small id="prenomError" class="erreur-champ"></small>
-              </div>
-              <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailError">
-                <small id="emailError" class="erreur-champ"></small>
-              </div>
-              <div class="mb-3">
-                <label for="sujet" class="form-label">Sujet</label>
-                <select class="form-select" id="sujet" name="sujet" aria-describedby="sujetError">
-                  <option value="">Choisir un sujet</option>
-                  <option value="freelance">Je veux devenir freelance sur la plateforme</option>
-                  <option value="recrutement">Je cherche un freelance</option>
-                  <option value="partenariat">Partenariat</option>
-                  <option value="support">Support</option>
-                </select>
-                <small id="sujetError" class="erreur-champ"></small>
-              </div>
-              <div class="mb-3">
-                <label for="message" class="form-label">Message</label>
-                <textarea class="form-control" id="message" name="message" rows="6" aria-describedby="messageError"></textarea>
-                <small id="messageError" class="erreur-champ"></small>
-              </div>
-              <button type="submit" class="btn btn-brand">Envoyer le message</button>
-              <div id="formSuccess" class="succes-formulaire" role="status" aria-live="polite"></div>
-            </form>
-          </div>
-          <div class="col-lg-5">
-            <aside class="info-contact">
-              <h2>Coordonnées</h2>
-              <ul class="liste-contact">
-                <li><i class="bi bi-envelope"></i> ndounalandry99@gmail.com</li>
-                <li><i class="bi bi-telephone"></i> +221 78 839 20 89</li>
-                <li><i class="bi bi-geo-alt"></i> km1, Avenue Cheikh Anta DIOP, Dakar</li>
-              </ul>
-              <div class="wrapper-carte">
-                <iframe title="Carte de Dakar" src="https://www.google.com/maps?q=Dakar%2C%20Senegal&z=12&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-              </div>
-            </aside>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+    <main id="main-content">
+        <section class="page-hero section-animee">
+            <div class="container">
+                <div class="text-center">
+                    <span class="badge-section">Contact</span>
+                    <h1>Parlez-nous de votre besoin ou de votre profil, et nous revenons vers vous rapidement.</h1>
+                </div>
+            </div>
+        </section>
+        <section class="section-espace section-animee">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-7">
+                        <form id="formulaire-contact">
+                            <div class="mb-3">
+                                <label for="nom" class="form-label">Nom</label>
+                                <input type="text" class="form-control" id="nom" name="nom" aria-describedby="nomError">
+                                <span id="erreur-nom" class="text-danger small erreur-message"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label for="prenom" class="form-label">Prénom</label>
+                                <input type="text" class="form-control" id="prenom" name="prenom"
+                                    aria-describedby="prenomError">
+                                <span id="erreur-prenom" class="text-danger small erreur-message"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" name="email"
+                                    aria-describedby="emailError">
+                                <span id="erreur-email" class="text-danger small erreur-message"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label for="sujet" class="form-label">Sujet</label>
+                                <select class="form-select" id="sujet" name="sujet" aria-describedby="sujetError">
+                                    <option value="">Choisir un sujet</option>
+                                    <option value="freelance">Je veux devenir freelance sur la plateforme</option>
+                                    <option value="recrutement">Je cherche un freelance</option>
+                                    <option value="partenariat">Partenariat</option>
+                                    <option value="support">Support</option>
+                                </select>
+                                <span id="erreur-sujet" class="erreur-champ"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" name="message" rows="5"
+                                    aria-describedby="messageError"></textarea>
+                                <span id="erreur-message" class="text-danger small erreur-message"></span>
+                            </div>
+
+                            <button type="submit" class="btn btn-brand w-100">Envoyer le message</button>
+
+                            <div id="formSuccess" class="succes-formulaire" role="status" aria-live="polite"></div>
+
+                            <div id="message-succes" class="alert alert-success mt-3 d-none">
+                                Votre message a été envoyé avec succès ! Notre équipe vous recontactera sous 24h.
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-5">
+                        <aside class="info-contact">
+                            <h2>Coordonnées</h2>
+                            <ul class="liste-contact">
+                                <li><i class="bi bi-envelope"></i> ndounalandry99@gmail.com</li>
+                                <li><i class="bi bi-telephone"></i> +221 78 839 20 89</li>
+                                <li><i class="bi bi-geo-alt"></i> km1, Avenue Cheikh Anta DIOP, Dakar</li>
+                            </ul>
+                            <div class="wrapper-carte">
+                                <iframe title="Carte de Dakar"
+                                    src="https://www.google.com/maps?q=Dakar%2C%20Senegal&z=12&output=embed"
+                                    loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer class="site-footer">
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4">
                     <h3>AfriTalent</h3>
-                    <p>La vitrine digitale des meilleurs freelances tech d'Afrique pour des collaborations rapides, humaines et ambitieuses.</p>
-                    <div class="liens-sociaux"><a href="#" aria-label="LinkedIn AfriTalent"><i class="bi bi-linkedin"></i></a><a href="#" aria-label="Instagram AfriTalent"><i class="bi bi-instagram"></i></a><a href="#" aria-label="X AfriTalent"><i class="bi bi-twitter-x"></i></a></div>
+                    <p>La vitrine digitale des meilleurs freelances tech d'Afrique pour des collaborations rapides,
+                        humaines et ambitieuses.</p>
+                    <div class="liens-sociaux"><a href="#" aria-label="LinkedIn AfriTalent"><i
+                                class="bi bi-linkedin"></i></a><a href="#" aria-label="Instagram AfriTalent"><i
+                                class="bi bi-instagram"></i></a><a href="#" aria-label="X AfriTalent"><i
+                                class="bi bi-twitter-x"></i></a></div>
                 </div>
                 <div class="col-6 col-lg-2">
                     <h3>Liens utiles</h3>
@@ -155,4 +176,5 @@
     <!-- Votre script JavaScript -->
     <script src="js/main.js"></script>
 </body>
+
 </html>
