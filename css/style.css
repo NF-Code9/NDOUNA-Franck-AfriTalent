@@ -133,6 +133,213 @@ h1, h2, h3, .navbar-brand span { font-family: "Space Grotesk", sans-serif; line-
   height: 100%; /* Permet d'avoir des hauteurs égales dans Bootstrap */
 }
 
+/* Carte de valeur (page À propos) */
+.carte-valeur {
+  background: var(--couleur-surface);
+  border: 1px solid var(--couleur-bordure);
+  border-radius: var(--rayon-xl);
+  box-shadow: var(--ombre-douce);
+  padding: 1.5rem;
+  text-align: center;
+  height: 100%;
+}
+
+.carte-valeur i {
+  font-size: 2rem;
+  color: var(--couleur-secondaire);
+  margin-bottom: 1rem;
+}
+
+/* Carte de témoignage (carrousel) */
+.carte-temoignage {
+  background: var(--couleur-surface);
+  border: 1px solid var(--couleur-bordure);
+  border-radius: var(--rayon-xl);
+  box-shadow: var(--ombre-douce);
+  padding: 1.5rem;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.carte-temoignage img {
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+}
+
+.role {
+  color: var(--couleur-attenu);
+  font-weight: 600;
+}
+
+.stars {
+  color: #f4b942;
+  margin-top: 1rem;
+}
+
+/* Prix (page Tarifs) */
+.prix {
+  font-size: 2.8rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+
+.prix span {
+  color: var(--couleur-attenu);
+  font-size: 1rem;
+}
+
+/* Liste de tarifs */
+.liste-tarifs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.liste-tarifs li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.liste-tarifs li.attenu {
+  color: var(--couleur-attenu);
+}
+
+/* Badge populaire */
+.badge-populaire {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--couleur-primaire);
+  color: #fff;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.carte-tarif.vedette {
+  border: 2px solid var(--couleur-primaire);
+  transform: scale(1.03);
+  position: relative;
+}
+
+/* Carte freelancer */
+.carte-freelance img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: linear-gradient(135deg, #edd5bd, #d6efe7);
+  border-radius: var(--rayon-lg);
+  margin-bottom: 1rem;
+}
+
+.texte-accent, .meta-profil {
+  color: var(--couleur-attenu);
+}
+
+.meta-profil {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+/* Bouton filtre (page Freelances) */
+.btn-filtre {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.btn-filtre:hover {
+  transform: translateY(-2px);
+}
+
+/* Formulaire de contact */
+.info-contact {
+  background: var(--couleur-surface);
+  border: 1px solid var(--couleur-bordure);
+  border-radius: var(--rayon-xl);
+  box-shadow: var(--ombre-douce);
+  padding: 1.5rem;
+}
+
+.liste-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.liste-contact li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.wrapper-carte iframe {
+  width: 100%;
+  min-height: 320px;
+  border: 0;
+  border-radius: var(--rayon-lg);
+}
+
+.erreur-message {
+  display: block;
+  min-height: 1.4rem;
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+}
+
+/* Visuel hero */
+.visuel-hero {
+  position: relative;
+  padding: 2rem;
+}
+
+/* Footer */
+.site-footer {
+  padding: 3.5rem 0 1.5rem;
+  background: #16120f;
+  color: #f8efe4;
+}
+
+.liens-footer {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.liens-footer li + li {
+  margin-top: 0.75rem;
+}
+
+.liens-sociaux {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.liens-sociaux a {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #f8efe4;
+  transition: background 0.25s ease;
+}
+
+.liens-sociaux a:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
 /* Bannière CTA */
 .banniere-cta {
   padding: 2.5rem;
@@ -301,6 +508,39 @@ body.theme-sombre {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto; /* Permet le clic quand il devient visible */
+}
+
+/* ==========================================================================
+   PERSONNALISATION DES BOUTONS DU CARROUSEL BOOTSTRAP
+   ========================================================================== */
+
+/* Harmonisation des boutons Précédent/Suivant avec le bouton "Retour en haut" */
+/* Les boutons du carrousel reçoivent la même couleur de fond que le bouton remonter */
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: var(--couleur-primaire); /* Couleur orange identique au bouton remonter */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Forme circulaire comme le bouton remonter */
+  opacity: 0.9; /* Légère transparence pour un effet moderne */
+  transition: opacity 0.25s ease, background-color 0.25s ease;
+}
+
+/* Effet au survol : le bouton devient légèrement plus transparent */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+  background-color: var(--couleur-primaire);
+}
+
+/* Personnalisation des icônes flèches pour qu'elles soient bien visibles sur le fond orange */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: white; /* Flèches blanches pour contraster avec le fond orange */
+  background-size: 60% 60%; /* Taille réduite pour un rendu élégant */
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
 }
 
 /* ==========================================================================
