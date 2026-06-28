@@ -514,6 +514,11 @@ body.theme-sombre {
    PERSONNALISATION DES BOUTONS DU CARROUSEL BOOTSTRAP
    ========================================================================== */
 
+/* Le conteneur du carrousel doit être en position relative pour que les boutons absolus soient bien positionnés */
+.carousel.slide {
+  position: relative;
+}
+
 /* Harmonisation des boutons Précédent/Suivant avec le bouton "Retour en haut" */
 /* Les boutons du carrousel reçoivent la même couleur de fond que le bouton remonter */
 .carousel-control-prev,
@@ -521,9 +526,21 @@ body.theme-sombre {
   background-color: var(--couleur-primaire); /* Couleur orange identique au bouton remonter */
   width: 50px;
   height: 50px;
-  border-radius: 50%; /* Forme circulaire comme le bouton remonter */
+  border-radius: var(--rayon-lg); /* Coins arrondis comme les autres boutons du site (20px) */
   opacity: 0.9; /* Légère transparence pour un effet moderne */
   transition: opacity 0.25s ease, background-color 0.25s ease;
+  top: 50%; /* Centre verticalement les boutons */
+  transform: translateY(-50%); /* Ajustement fin du centrage vertical */
+}
+
+/* Positionnement spécifique : bouton précédent à gauche */
+.carousel-control-prev {
+  left: 0; /* Positionné à l'intérieur gauche du carrousel */
+}
+
+/* Positionnement spécifique : bouton suivant à droite */
+.carousel-control-next {
+  right: 0; /* Positionné à l'intérieur droit du carrousel */
 }
 
 /* Effet au survol : le bouton devient légèrement plus transparent */
